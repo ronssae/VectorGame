@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class Bullets : MonoBehaviour
 {
-    [SerializeField] private float raycastDistance;
+    [SerializeField] private float lifetime;
 
-    void Update()
+    void Start()
     {
-        // Raycast in the direction the projectile is moving
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, GetComponent<Rigidbody2D>().velocity, raycastDistance);
+        Destroy(gameObject, lifetime);
+    }
 
-        // If the ray hits something, destroy the projectile and the target
-        if (hit.collider != null)
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
         {
-            Destroy(hit.collider.gameObject);  // Destroy the target
-            Destroy(gameObject);  // Destroy the projectile
+            Destroy(gameObject);
         }
     }
 }
