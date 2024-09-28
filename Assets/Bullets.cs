@@ -8,6 +8,8 @@ public class Bullets : MonoBehaviour
 
     void Start()
     {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        Physics2D.IgnoreCollision(GetComponent<Collider2D>(), player.GetComponent<Collider2D>());
         Destroy(gameObject, lifetime);
     }
 
