@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 3622312587460322780}
   - component: {fileID: 1633957266945894688}
   - component: {fileID: 270384974485160395}
-  - component: {fileID: 239206613730484774}
   - component: {fileID: -3542466559911192293}
+  - component: {fileID: 5683437654883057251}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Bullet
@@ -29,9 +29,9 @@ Transform:
   m_GameObject: {fileID: 2494575736820187749}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.1125, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
-  m_ConstrainProportionsScale: 1
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.3, y: 0.15, z: 0.3}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -114,8 +114,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &239206613730484774
-CircleCollider2D:
+--- !u!114 &-3542466559911192293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2494575736820187749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89b1024d22c02274999f0c1d6111aa7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifetime: 1.5
+--- !u!70 &5683437654883057251
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -147,18 +160,5 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
---- !u!114 &-3542466559911192293
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2494575736820187749}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89b1024d22c02274999f0c1d6111aa7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lifetime: 3
+  m_Size: {x: 1, y: 1}
+  m_Direction: 1

@@ -12,8 +12,8 @@ public class Player : MonoBehaviour
     void Update()
     {
         direction = mousePosition - (Vector2)transform.position;
-        AimAtMouse();
 
+        AimAtMouse();
         if (Input.GetMouseButtonDown(0))
         {
             ShootProjectile();
@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
 
     void ShootProjectile()
     {
-        GameObject projectile = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+        GameObject projectile = Instantiate(bulletPrefab, transform.position, transform.rotation);
         projectile.GetComponent<Rigidbody2D>().velocity = direction.normalized * power;
     }
 }

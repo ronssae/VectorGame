@@ -17,6 +17,8 @@ public class Target : MonoBehaviour
     {
         transform.Rotate(Vector3.forward * rotateSpeed * Time.deltaTime);
 
+        lineOfSight.SetPosition(0, transform.position);
+
         RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right, 50f);
 
         if (hit.collider.CompareTag("Boundary"))
@@ -35,8 +37,6 @@ public class Target : MonoBehaviour
             lineOfSight.SetPosition(1, hit.point);
             lineOfSight.colorGradient = redColor;
         }
-
-        lineOfSight.SetPosition(0, transform.position);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
